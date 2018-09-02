@@ -12,7 +12,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	}
 
 	public function _initSmarty(Yaf_Dispatcher $dispatcher) {
-		Smarty_Autoloader::register();
+		Smarty_Autoloader::register(true);
 		$smarty = new Smarty_Adapter(null , Yaf_Application::app()->getConfig()->smarty);
 		$dispatcher->setView($smarty);
 	}
