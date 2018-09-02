@@ -1,15 +1,5 @@
 <?php
 Yaf_Loader::import("Smarty/Smarty.class.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_template_compiled.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_templatecompilerbase.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_templatelexer.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_templateparser.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_compilebase.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_write_file.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_undefined.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_method_loadplugin.php");
-Yaf_Loader::import("Smarty/sysplugins/smartyexception.php");
-Yaf_Loader::import("Smarty/sysplugins/smarty_internal_parsetree_template.php");
 
 class Smarty_Adapter implements Yaf_View_Interface
 {
