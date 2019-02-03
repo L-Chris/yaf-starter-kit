@@ -1,3 +1,3 @@
-library/
-views/html_c
-views/cache
+application/views/html_c
+application/views/cache
+vendor/

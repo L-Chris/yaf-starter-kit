@@ -1,5 +1,4 @@
 <?php
-Yaf_Loader::import("Smarty/Smarty.class.php");
 
 class Smarty_Adapter implements Yaf_View_Interface
 {

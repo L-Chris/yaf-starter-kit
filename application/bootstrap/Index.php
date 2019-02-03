@@ -1,10 +1,9 @@
 <?php
 
 class Bootstrap extends Yaf_Bootstrap_Abstract {
-
 	public function _initConfig() {
-		$arrConfig = Yaf_Application::app()->getConfig();
-		Yaf_Registry::set('config', $arrConfig);
+		$config = Yaf_Application::app()->getConfig();
+		Yaf_Registry::set('config', $config);
 	}
 
 	public function _initPlugin(Yaf_Dispatcher $dispatcher) {
@@ -12,8 +11,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	}
 
 	public function _initSmarty(Yaf_Dispatcher $dispatcher) {
-		Smarty_Autoloader::register(true);
-		$smarty = new Smarty_Adapter(null , Yaf_Application::app()->getConfig()->smarty);
+		$smarty = new Smarty_Adapter(null , Yaf_Registry::get("config")->get("smarty"));
 		$dispatcher->setView($smarty);
 	}
 
