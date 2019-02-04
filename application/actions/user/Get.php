@@ -1,11 +1,9 @@
 <?php
 class GetAction extends AbstractAction {
-  public function execute () {
+  public function run() {
     $data = array();
-    $data['status'] = 1;
-    $data['module'] = $this->getRequest()->getModuleName();
-    $data['controller'] = $this->getRequest()->getControllerName();
-    $data['action'] = $this->getRequest()->getActionName();
+    $data['status'] = 0;
+    $data['data'] = UserModel::find();
     $this->getResponse()->setBody(json_encode($data));
   }
 }
