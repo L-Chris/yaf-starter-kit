@@ -1,6 +1,5 @@
 <?php
 abstract class AbstractController extends Yaf_Controller_Abstract {
-
 	public $arrViewData = array(
 		'data' => array(),
 		'base' => array(),

@@ -1,5 +1,5 @@
 <?php
-class GetAction extends Yaf_Action_Abstract {
+class GetAction extends AbstractAction {
   public function execute () {
     $data = array();
     $data['status'] = 1;

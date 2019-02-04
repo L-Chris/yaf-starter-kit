@@ -1,4 +1,5 @@
 <?php
+use Medoo\Medoo;
 
 class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initConfig() {
@@ -11,7 +12,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	}
 
 	public function _initSmarty(Yaf_Dispatcher $dispatcher) {
-		$smarty = new Smarty_Adapter(null , Yaf_Registry::get("config")->get("smarty"));
+		$smarty = new Smarty_Adapter(null , Yaf_Registry::get('config')->get('smarty'));
 		$dispatcher->setView($smarty);
 	}
 
@@ -19,9 +20,9 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 		$dispatcher->disableView();
 	}
 
-	// public function _initDb(Yaf_Dispatcher $dispatcher) {
-	// 	$database = new Medoo(Yaf_Registry::get("config")->get("database"));
-	// 	$this->db = $database;
-	// 	Yaf_Registry::set('db', $database);
-	// }
+	public function _initDb(Yaf_Dispatcher $dispatcher) {
+		$db_config = Yaf_Registry::get('config')->get('mysql')->toArray();
+		$database = new Medoo($db_config);
+		Yaf_Registry::set('_db', $database);
+	}
 }

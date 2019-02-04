@@ -1,7 +1,7 @@
 <?php
 class UserController extends AbstractController {
   public $actions = array(
-    "list" => "actions/user/ListAction.php",
-    "get" => "actions/user/GetAction.php"
+    "list" => "actions/user/List.php",
+    "get" => "actions/user/Get.php"
   );
 }
