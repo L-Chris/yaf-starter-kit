@@ -18,4 +18,10 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initView(Yaf_Dispatcher $dispatcher) {
 		$dispatcher->disableView();
 	}
+
+	// public function _initDb(Yaf_Dispatcher $dispatcher) {
+	// 	$database = new Medoo(Yaf_Registry::get("config")->get("database"));
+	// 	$this->db = $database;
+	// 	Yaf_Registry::set('db', $database);
+	// }
 }

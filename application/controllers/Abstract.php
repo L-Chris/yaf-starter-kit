@@ -3,7 +3,7 @@ abstract class AbstractController extends Yaf_Controller_Abstract {
 
 	public $arrViewData = array(
 		'data' => array(),
-		'comm' => array(),
+		'base' => array(),
 	);
 
 	protected function init() {
@@ -11,7 +11,7 @@ abstract class AbstractController extends Yaf_Controller_Abstract {
 	}
 
   private function _initCommon() {
-		$this->arrViewData['common'] = array(
+		$this->arrViewData['base'] = array(
 			'__ROOT__' => 'http://yaf.cc',
 			'__RESOURCE__' => 'http://yaf.cc/resource'
 		);

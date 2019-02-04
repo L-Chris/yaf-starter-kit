@@ -3,3 +3,8 @@
 ## Features:
 - yaf
 - smarty
+
+## Usage
+```
+composer install
+```
