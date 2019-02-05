@@ -1,20 +1,14 @@
 <?php
 abstract class AbstractController extends Yaf_Controller_Abstract {
 	public $arrViewData = array(
-		'data' => array(),
-		'base' => array(),
+		'data' => array()
 	);
 
 	protected function init() {
 		$this->_initCommon();
 	}
 
-  private function _initCommon() {
-		$this->arrViewData['base'] = array(
-			'__ROOT__' => 'http://yaf.cc',
-			'__RESOURCE__' => 'http://yaf.cc/resource'
-		);
-  }
+  private function _initCommon() {}
 
 	public function assign($strKey, $mixValue) {
 		$this->arrViewData['data'][$strKey] = $mixValue;

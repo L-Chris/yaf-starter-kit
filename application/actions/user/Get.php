@@ -5,7 +5,8 @@ class GetAction extends AbstractAction {
   }
 
   public function run() {
-    Response::success($this->getResponse(), $this->$user_model->find());
+    $id = $this->getRequest()->getQuery('id');
+    Response::success($this->getResponse(), $this->$user_model->get($id));
   }
 }
 ?>
