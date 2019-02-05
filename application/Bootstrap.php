@@ -21,7 +21,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	}
 
 	public function _initDb(Yaf_Dispatcher $dispatcher) {
-		$db_config = Yaf_Registry::get('config')->get('mysql')->toArray();
+		$db_config_file = new Yaf_Config_Ini(APP_PATH . '/conf/db.ini');
+		$db_config = $db_config_file->get('mysql')->toArray();
 		$database = new Medoo($db_config);
 		Yaf_Registry::set('_db', $database);
 	}
