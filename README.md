@@ -1,8 +1,9 @@
 # yaf-starter-kit
 
 ## Features:
-- yaf
-- smarty
+- Yaf
+- Smarty
+- Eloquent ORM
 
 ## Usage
 ```

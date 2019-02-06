@@ -1,7 +1,11 @@
 <?php
-use Medoo\Medoo;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Bootstrap extends Yaf_Bootstrap_Abstract {
+	public function _initLoader() {
+		Yaf_Loader::import(APP_PATH . '/application/Function.php');
+	}
+
 	public function _initConfig() {
 		$config = Yaf_Application::app()->getConfig();
 		Yaf_Registry::set('config', $config);
@@ -23,7 +27,10 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initDb(Yaf_Dispatcher $dispatcher) {
 		$db_config_file = new Yaf_Config_Ini(APP_PATH . '/conf/db.ini');
 		$db_config = $db_config_file->get('mysql')->toArray();
-		$database = new Medoo($db_config);
-		Yaf_Registry::set('_db', $database);
+
+		$capsule = new Capsule;
+		$capsule->addConnection($db_config);
+		$capsule->setAsGlobal();
+		$capsule->bootEloquent();
 	}
 }
