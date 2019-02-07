@@ -4,7 +4,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''
-          /root/scripts/deploy.sh yaf-starter-kit
+          /root/scripts/deploy-server.sh yaf-starter-kit
         '''
       }
     }
