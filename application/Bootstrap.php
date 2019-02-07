@@ -3,6 +3,8 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initLoader() {
+		Yaf_Loader::import(APP_PATH . '/vendor/smarty/smarty/libs/Autoloader.php');
+		Yaf_Loader::import(APP_PATH . '/vendor/autoload.php');
 		Yaf_Loader::import(APP_PATH . '/application/Function.php');
 	}
 
